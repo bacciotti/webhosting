@@ -1,0 +1,16 @@
+## Wordpress migration guide ##  
+  
+I wrote this tutorial to help me in the future if I have to migrate wordpress installations between servers again.  
+
+### Step 1 - Install Duplicator ###
+Install "Duplicator" plugin in the origin website. Activate it and go to the "Packages" tab, create a new Build and download the
+"installer.php" and the "[weirdo-big-name-file]".  
+
+If it is a small website, the "Build" will be processed with no issues. But if it is a big website, we have to go ahead on Step
+1.1.  
+
+#### Step 1.1 - What if my website was too big and Duplicator warn this? ####  
+In this scenario, we have to use the "Two-step installation". We must "Build" just the database. The other files will be
+transfered manually (Step 2).  
+
+### Step 2 - How to migrate manually with SSH/SCP###

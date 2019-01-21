@@ -1,0 +1,6 @@
+## How to find out the number of iNodes of the hosting? ##
+1 - Access server with PuTTY or Terminal;
+> ssh -p 2222 [username]@[yout.server.ip]
+
+2 - Use the following command:
+> find ./ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n

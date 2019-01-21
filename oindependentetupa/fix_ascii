@@ -1,0 +1,72 @@
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã§Ã£', 'çã'),
+	`post_excerpt` = replace(post_excerpt, 'Ã§Ã£', 'çã'),
+	`post_content` = replace(post_content, 'Ã§Ã£', 'çã');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã§', 'ç'),
+	`post_excerpt` = replace(post_excerpt, 'Ã§', 'ç'),
+	`post_content` = replace(post_content, 'Ã§', 'ç');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã³', 'ó'),
+	`post_excerpt` = replace(post_excerpt, 'Ã³', 'ó'),
+	`post_content` = replace(post_content, 'Ã³', 'ó');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã¡', 'á'),
+	`post_excerpt` = replace(post_excerpt, 'Ã¡', 'á'),
+	`post_content` = replace(post_content, 'Ã¡', 'á');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã£', 'ã'),
+	`post_excerpt` = replace(post_excerpt, 'Ã£', 'ã'),
+	`post_content` = replace(post_content, 'Ã£', 'ã');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã©', 'é'),
+	`post_excerpt` = replace(post_excerpt, 'Ã©', 'é'),
+	`post_content` = replace(post_content, 'Ã©', 'é');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã´', 'ô'),
+	`post_excerpt` = replace(post_excerpt, 'Ã´', 'ô'),
+	`post_content` = replace(post_content, 'Ã´', 'ô');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ãª', 'ê'),
+	`post_excerpt` = replace(post_excerpt, 'Ãª', 'ê'),
+	`post_content` = replace(post_content, 'Ãª', 'ê');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ãº', 'ú'),
+	`post_excerpt` = replace(post_excerpt, 'Ãº', 'ú'),
+	`post_content` = replace(post_content, 'Ãº', 'ú');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã¢', 'â'),
+	`post_excerpt` = replace(post_excerpt, 'Ã¢', 'â'),
+	`post_content` = replace(post_content, 'Ã¢', 'â');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Ã', 'í'),
+	`post_excerpt` = replace(post_excerpt, 'Ã', 'í'),
+	`post_content` = replace(post_content, 'Ã', 'í');
+UPDATE 
+	`wpo5_posts`
+SET 
+	`post_title` = replace(post_title, 'Âº', 'º'),
+	`post_excerpt` = replace(post_excerpt, 'Âº', 'º'),
+	`post_content` = replace(post_content, 'Âº', 'º');

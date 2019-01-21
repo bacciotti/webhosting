@@ -1,0 +1,10 @@
+## Problem ##
+Google warn about INFECTED SITE and blocked it.
+
+I have to search in the site the infected page.
+
+## Steps ##
+1 - Search in database;
+2 - Check index.php, htaccess and wp-config files;
+3 - Check wp-include directory;
+4 - Analyze every single theme file for bugs and malicious codes.

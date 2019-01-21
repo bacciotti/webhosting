@@ -14,3 +14,31 @@ In this scenario, we have to use the "Two-step installation". We must "Build" ju
 transfered manually (Step 2).  
 
 ### Step 2 - How to migrate manually with SSH/SCP###
+1 - Open Terminal (Mac) or Putty (Windows);
+2 - Command to access server with SSH (SSH access must be allowed by the hosting):
+
+>   ssh –p 2222 [username]@[your].[server].[origin].[ip]  
+
+3 - Access the folder you want to copy with "cd" command;
+4 - Command to copy files with SCP:
+
+> scp –r –P 2222 * [username]@[server].[target].[ip]  :/your/new/server/path
+
+5 - Wait until 100%.
+
+### Step 3 - Smooth migration ###
+If your website is small, it is not necessary to access by SSH and you must simply follow the Duplicator plugin steps:
+
+a) Upload installer.php and the big-file.rar to your new server;
+b) Change DNS;
+c) Wait the DNS changes and access installer.php;
+d) Input the database access info (the db must be created before, please be sure to take a note for these access info);
+e) Next-next-finish.
+
+### Step 4 - After migration ###
+1 - Check if there are e-mail accounts in the old server. If yes, create the accounts in the new server and migrate the 
+"mail" folder. After that, delete accounts on the old server;
+2 - Delete domains, databases and files from the old server;
+3 - Delete Duplicator`s installation files from the new server.
+
+## End of Tutorial ##

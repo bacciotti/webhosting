@@ -1,0 +1,58 @@
+## How to Setup Laravel on C9 Environment ##
+1 - Upgrade PHP:
+
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt-get update -y
+
+sudo apt-get install php7.0-curl php7.0-cli php7.0-dev php7.0-gd php7.0-intl php7.0-mcrypt php7.0-json php7.0-mysql php7.0-opcache php7.0-bcmath php7.0-mbstring php7.0-soap php7.0-xml php7.0-zip -y
+
+sudo mv /etc/apache2/envvars /etc/apache2/envvars.bak
+sudo apt-get remove libapache2-mod-php5 -y
+sudo apt-get install libapache2-mod-php7.0 -y
+sudo cp /etc/apache2/envvars.bak /etc/apache2/envvars
+
+Source: https://community.c9.io/t/how-to-upgrade-a-php-workspace-to-version-7/8570
+
+1.1 - With the following command you certify you are on a up-to-date version:
+> php -v
+
+2 - Install Composer and move it to the user bin
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+Source: https://medium.com/@mahmoud_62270/setting-up-laravel-project-on-aws-cloud-9-61370dc55a5d
+
+2.1 - To check if comoposer is installed, use:
+> composer about
+
+3 - Install Laravel 
+> sudo composer global require 'laravel/installer'
+
+4 - Create new project
+> laravel new project
+
+5 - Set up database
+mysql-ctl install
+mysql-ctl cli
+use c9;
+exit;
+
+Source: https://community.c9.io/t/guide-to-laravel-5-4-workspace-installation/13838
+
+6 - Show .env (hidden) files:
+Go to Cloud9 menu -> Preferences -> Tree & Navigate -> Remove the ".*" from the pattern
+
+6.1 - If you want to use PhpMyAdmin, type:
+> phpmyadmin-ctl install
+
+7 - Change .env file:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=c9
+DB_USERNAME=your_cloud9_username
+DB_PASSWORD=
+
+8 - 
+
+Source: https://stackoverflow.com/questions/32280260/show-hidden-files-in-cloud9-io

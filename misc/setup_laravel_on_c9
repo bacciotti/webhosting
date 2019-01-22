@@ -13,6 +13,9 @@ sudo cp /etc/apache2/envvars.bak /etc/apache2/envvars
 
 Source: https://community.c9.io/t/how-to-upgrade-a-php-workspace-to-version-7/8570
 
+Obs: To upgrade to the latest version (7.3):
+sudo apt install php7.3 php7.3-common php7.3-cli
+
 1.1 - With the following command you certify you are on a up-to-date version:
 > php -v
 

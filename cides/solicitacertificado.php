@@ -1,6 +1,7 @@
 <?php
 /*
-Template name: Certificados
+Template name: Certificates v2
+Author: Lucas Bacciotti | Twitter: @baciotti | GitHub: @bacciotti
  */
 
 get_header(); ?>
@@ -20,20 +21,52 @@ get_header(); ?>
 
 			
 			<?php
-			    $cpf_usuario = trim($_GET['cpf_usuario']);
-				if (is_numeric($cpf_usuario)){
-					$url_certifica = "https://localhost/website/wp-content/uploads/2019/04/" . $cpf_usuario .".pdf";
-					echo "<div>";
-					echo "<p>Clique no link abaixo para fazer o download do seu certificado</p>";
-					echo "<a href='" . $url_certifica . "' target='_blank'>Certificado de participação (PDF)</a>";
-					echo "</div>";
-	
+			    $user_id = $_POST['user_id'];
+			
+				if (empty($user_id) or !is_numeric($user_id)){ 
+						echo "<div id='divInvalidUserId'>";
+						echo "<p>Invalid User ID.</p>";
+						echo "</div>";
 				} else {
-					echo "CPF inválido.";
+					// Encrypt
+					$hash_id = md5(trim($user_id));
+														
+					// Searches on database with hash md5
+					$results = $wpdb->get_results( "
+							SELECT 
+								post_name,
+								guid,
+								post_date 
+							FROM 
+								wp_posts
+							WHERE
+								post_type = 'attachment'
+							AND
+								md5(post_name) = '" .$hash_id. "'
+							ORDER BY
+								post_date DESC
+							LIMIT 
+								1
+						");
+
+					// Gets URL
+					$doc_url = $results[0]->guid; 
+
+					// Creates HTML codes
+					if (!empty($doc_url)){	
+						echo "<div id='divAnchor'>";
+						echo "<p>Click on the link below to download your certificate.</p>";
+						echo "<a href='" . $doc_url . "' target='_blank'>Certificate (PDF)</a>";
+						echo "</div>";
+
+					} else {
+						echo "<div id='divNoData'>";
+						echo "<p>No data found.</p>";
+						echo "</div>";
+					}
 				}
 			?>
 
-		
 		</main><!-- #main -->
 	</section><!-- #primary -->
 	
